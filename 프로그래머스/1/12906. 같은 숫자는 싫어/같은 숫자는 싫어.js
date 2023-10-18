@@ -1,16 +1,9 @@
 function solution(arr)
 {
-    let answer = [];
-    
-    // 처음 값은 answer에 바로 넣는다.
-    answer.push(arr[0]);
-    
-    // 앞 숫자와 뒷 숫자를 비교해서 다르면 뒷 숫자를 answer에 push한다.
-    for(let i = 0; i < arr.length - 1; i ++){
-        if(arr[i] !== arr[i+1] ){
-            answer.push(arr[i+1]);
-        }
-    }
+    var answer = [];
+
+    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+    console.log('Hello Javascript')
     
     return answer;
 }
