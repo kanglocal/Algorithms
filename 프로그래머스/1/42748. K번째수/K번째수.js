@@ -1,14 +1,8 @@
 function solution(array, commands) {
     var answer = [];
-    
-    answer = commands.map((command) => {
-        const [i, j, k] = command;
-        const newArr = array
-        .filter((value, fIndex) => fIndex >= i - 1 && fIndex < j) // i~j 배열 만든것.
-        .sort((a,b) => a - b)
-        
-        return newArr[k - 1];
-    })
+        for(let command of commands){
+        answer.push(array.slice(command[0]-1,command[1]).sort((a,b) => a-b)[command[2]-1]);
+    }
    
     return answer;
 }
