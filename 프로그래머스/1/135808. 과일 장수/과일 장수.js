@@ -1,24 +1,11 @@
 function solution(k, m, score) {
     var answer = 0;
-    const boxes = [];
-    let box = [];
     
-    score.sort((a,b) => b-a);
+    const items = score.slice().sort((a,b) => a-b).slice(score.length % m); // 맨 앞의 가장 점수가 낮은 사과 제외.
     
-    for(let i = 0; i < score.length; i++){
-        box.push(score[i]);
-        if(box.length === m){
-            boxes.push(box);
-            box = [];
-        }
+    for(let i = 0; i <items.length; i += m){
+        answer += items[i] * m;
     }
-    
-    
-    for(let box of boxes){
-        let minPoint = box[m-1];
-        answer += minPoint * m;
-    }
-    
     
     return answer;
 }
