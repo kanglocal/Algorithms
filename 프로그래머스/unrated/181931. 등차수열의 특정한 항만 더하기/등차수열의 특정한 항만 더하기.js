@@ -1,13 +1,5 @@
 function solution(a, d, included) {
-    var answer = 0;
-    
-    let value = a;
-    for(let i = 0; i < included.length; i++){
-        if(included[i]){
-            answer += value;
-        }
-        value += d;
-    }
-    
-    return answer;
+   return included.reduce((acc, cur, i) => {
+        return cur ? acc + a + d * i : acc
+    }, 0)
 }
