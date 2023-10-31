@@ -3,9 +3,7 @@ function solution(s) {
     let copy = s;
     
     while(Number(copy) !== 1){
-        for(let letter of copy){
-            if(letter === '0') answer[1]++;
-        }
+        answer[1] += copy.split(0).length - 1;
         
         copy = copy.replaceAll('0','').length.toString(2);
         answer[0]++;
