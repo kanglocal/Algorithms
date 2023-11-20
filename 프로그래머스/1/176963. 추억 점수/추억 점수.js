@@ -2,12 +2,10 @@ function solution(name, yearning, photo) {
     var answer = [];
     
     for(let items of photo) {
-        let sum = 0;
-        for(let item of items){
-            if(name.indexOf(item) >= 0){
-                sum += yearning[name.indexOf(item)];    
-            }
-        }
+        let sum = items.reduce((acc, cur,index) => {
+            acc += yearning[name.indexOf(cur)] ?? 0;
+            return acc;
+        }, 0);
         answer.push(sum);
     }
     
