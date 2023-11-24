@@ -1,10 +1,19 @@
 function solution(people, limit) {
+    let answer = 0;
+    let start = 0;
+    let end = people.length -1;
     
     people.sort(function(a, b){return a-b});
     
-    for(var i=0, j=people.length-1; i < j; j--) {
-        if( people[i] + people[j] <= limit ) i++;
-    }    
+    while(start <= end){
+        if(people[start] + people[end] <= limit){
+            start += 1;
+            end -= 1;
+        }else{
+            end -= 1;
+        }
+        answer += 1;
+    }
     
-    return people.length-i;
+    return answer;
 }
