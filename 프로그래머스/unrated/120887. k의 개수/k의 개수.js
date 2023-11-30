@@ -1,12 +1,9 @@
 function solution(i, j, k) {
-    var answer = 0;
+    let strNums = '';
     
     for(let num = i; num <= j; num++){
-        let strNum = String(num);
-        if(strNum.includes(k)) {
-            answer += (strNum.split(k + '').length - 1);
-        }
+        strNums += num;
     }
     
-    return answer;
+    return strNums.split(k + '').length - 1;
 }
