@@ -1,11 +1,13 @@
 function solution(s) {
     var answer = '';
-    let sortedS = [...s].sort().join('');
     
-    for(let letter of sortedS){
-        let length = sortedS.split(letter).length - 1;
-        if(length === 1) answer += letter;
+    let arr = [];
+    for(let letter of s){
+        if(s.indexOf(letter) === s.lastIndexOf(letter)){
+            arr.push(letter);
+        }
     }
+    answer = arr.sort().join('');
     
     return answer;
 }
