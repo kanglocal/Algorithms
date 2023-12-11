@@ -1,16 +1,5 @@
 function solution(arr) {
-    var answer = [];
+    const arrLength = 2 ** Math.ceil(Math.log2(arr.length));
     
-    // 최소 개수
-    let temp = 1;
-    while(temp < arr.length){
-        temp *= 2;
-    }
-    
-    
-    for(let i = 1; i <= temp - arr.length ; i++){
-        answer.push(0);
-    }
-    
-    return [...arr,...answer];
+    return([...arr, ...new Array(arrLength - arr.length).fill(0)]);
 }
