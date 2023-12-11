@@ -1,9 +1,9 @@
 function solution(arr, queries) {
     var answer = [];
     
-    for(let query of queries){
+    for(let [s, e, k] of queries){
         for(let i = 0; i < arr.length; i++){
-            if(query[0] <= i && i <= query[1] && i%query[2] === 0){
+            if(s <= i && i <= e && i%k === 0){
                 arr[i]++;
             }
         }
