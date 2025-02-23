@@ -3,19 +3,19 @@ function solution(s) {
 
   let firstCnt = 0;
   let restCnt = 0;
-  let tempLetter = '';
+  let currentLetter = '';
 
   for(let i=0; i < s.length; i++) {
-    if(tempLetter === ''){
-      tempLetter = s[i];
+    if(currentLetter === ''){
+      currentLetter = s[i];
       firstCnt++;
     } else{
-      if(s[i] === tempLetter) firstCnt++
+      if(s[i] === currentLetter) firstCnt++
       else restCnt++;
 
       if(firstCnt === restCnt) {
         answer++
-        tempLetter = ''
+        currentLetter = ''
         firstCnt = 0;
         restCnt = 0;
       }
